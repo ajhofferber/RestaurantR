@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825181036) do
+ActiveRecord::Schema.define(version: 20150825200217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20150825181036) do
   create_table "parties", force: :cascade do |t|
     t.integer  "table_number"
     t.integer  "num_in_party"
-    t.boolean  "has_paid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",       default: 0
   end
 
 end

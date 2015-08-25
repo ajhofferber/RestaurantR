@@ -1,0 +1,16 @@
+
+<h3> Table Number <%= @party.table_number %> </h3>
+<br>
+<%= @party.num_in_party %> members in party
+<br>
+Ticket Status: <%= @party.status%>
+
+
+<form class = "link" action="/parties">
+     <input type="submit" value="Back to Open Tickets">
+ </form>
+
+
+ <form class = "link" action="/">
+      <input type="submit" value="Home">
+  </form>

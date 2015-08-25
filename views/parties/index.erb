@@ -1,0 +1,13 @@
+<h3> Open Tables </h3>
+
+<a href="/parties/new"> Open New Ticket </a>
+
+<ul>
+  <% @parties.each do |party| %>
+    <li>
+      <%= party.table_number %>
+      <%= party.num_in_party %>
+      <%= party.status %>
+    </li>
+  <% end %>
+</ul>

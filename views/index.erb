@@ -1,1 +1,37 @@
-<h1> HI I AM HERE AND STUFF</h1>
+<h1>Hotel Albatross WaiterAid</h1>
+
+
+
+
+
+<form class = "link" action="/parties/new">
+     <input type="submit" value="Open New Ticket">
+ </form>
+
+
+ <form class = "link" action="/items/foods/">
+      <input type="submit" value="View Food Menu">
+  </form>
+
+
+  <form class = "link" action="/items/drinks/">
+       <input type="submit" value="View Drink Menu">
+   </form>
+
+
+
+<section class="parties">
+  <h3>Open Tickets</h3>
+
+  <ul>
+    <% @parties.each do |party| %>
+      <li>
+        <a href="/parties/<%= party.id %>">Table Number <%= party.table_number %></a>
+        <form action="/parties/<%= party.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit"> Remove </button>
+        </form>
+      </li>
+    <% end %>
+  </ul>
+</section>
