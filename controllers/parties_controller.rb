@@ -6,11 +6,25 @@ class PartiesController < ApplicationController
     erb :'parties/index'
   end
 
-#create new party
+
   get '/new' do
     @parties = Party.all
+    @table_number = params[:table_number]
     erb :'parties/new'
   end
+
+
+
+#create new party
+  get '/new/:table_number' do
+    @parties = Party.all
+    @table_number = params[:table_number]
+    erb :'parties/info'
+  end
+
+post '/new' do
+  redirect "/parties/new/#{params[:table_number]}"
+end
 
 #post new party
   post '/' do
@@ -18,11 +32,16 @@ class PartiesController < ApplicationController
     redirect "/parties/#{party.id}"
   end
 
+
+
 #show party
   get '/:id' do
     @party = Party.find(params[:id])
+    @table_number = params[:table_number]
     @orders = Order.all.where(party_id: params[:id])
     @items = Item.all
+    @foods = Item.all.where("category = 'foods'")
+    @drinks = Item.all.where("category = 'drinks'")
     erb :'parties/show'
   end
 

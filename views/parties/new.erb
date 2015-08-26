@@ -1,8 +1,37 @@
-<h3> Enter New Ticket Information </h3>
+<h3> Select a Table </h3>
 
 
-<form action="/parties" method="post">
-  <input type="text" name="party[table_number]" placeholder="Table Number">
-  <input type="text" name="party[num_in_party]" placeholder="Number in Party">
-  <input type="submit" value="Let's Boogie">
-</form>
+
+<div id="floor">
+
+<div class ="row">
+
+<%(1..15).to_a.each do |num| %>
+  <%occupied = false %>
+  <% @parties.each do |party|%>
+   <% if party.table_number == num %>
+<div class ="two columns">
+      <form action="/parties/<%= party.id %>" method="get">
+        <button id="<%=party.status%>" class ="table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
+     </form>
+</div>
+  <% occupied = true %>
+    <% end %>
+
+   <% end %>
+   <% if occupied == false %>
+<div class ="two columns">
+     <form action="/parties/new" method="post">
+       <button id ="empty" class ="table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
+    </form>
+</div>
+    <%end%>
+
+  <% if num%5 == 0%>
+</div>
+<div class ="row">
+  <%end%>
+<% end %>
+
+</div>
+</div>

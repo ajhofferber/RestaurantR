@@ -5,14 +5,18 @@
 <br>
 Ticket Status: <%= @party.status%>
 <br>
+<form action="/parties/<%= @party.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit"> Close Ticket </button>
+</form>
 
 
 <% @orders.each do |order| %>
 <p>
    <%=order.item.name%>
-   <form action="/orders/<%=order.id%>" method="post">
+    <form action="/orders/<%=order.id%>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button type="submit" >Remove</button>
+          <button type="submit"> Remove Order </button>
         </form>
  </p>
     <% end %>
@@ -26,26 +30,29 @@ Ticket Status: <%= @party.status%>
         <%= @party.table_number %>
       </option>
   </select>
+<br>
+
 
   <select name="order[item_id]">
+
     <% @items.each do |item| %>
+
       <option value="<%= item.id %>">
         <%= item.name %>
       </option>
     <% end %>
   </select>
-
-  <input type="submit" value="Order Up!">
+  <input class ="button" type="submit" value="Order Up!">
 
 </form>
 
 
 
 <form class = "link" action="/parties">
-     <input type="submit" value="Back to Open Tickets">
+     <button type="submit" value="Back to Open Tickets">Back to Open Tickets </button>
  </form>
 
 
  <form class = "link" action="/">
-      <input type="submit" value="Home">
+      <button  type="submit" value="Home"> Home </button>
   </form>

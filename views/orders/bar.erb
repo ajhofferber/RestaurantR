@@ -1,5 +1,8 @@
+<h2> BAR ORDERS</h2>
+
+
 <%@orders.each do |order|%>
  <%if order.item.category == "drinks"%>
-<h5>  Table Number: <%= order.party.table_number%> - <%= order.item.name %> </h5>
+  <h5 class = 'order' data-start-time= "<%=order.created_at%>">  Table Number: <%= order.party.table_number%> - <%= order.item.name %> </h5>
  <%end%>
 <%end%>

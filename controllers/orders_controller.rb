@@ -12,12 +12,14 @@ class OrdersController < ApplicationController
 end
 
  get '/kitchen' do
-   @orders= Order.all
+   order = Order.all
+   @orders= order.order(:created_at)
    erb :'orders/kitchen'
   end
 
  get '/bar' do
-   @orders= Order.all
+   order = Order.all
+   @orders= order.order(:created_at)
    erb :'orders/bar'
 end
 

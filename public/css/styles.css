@@ -1,6 +1,40 @@
 body {
   background-color: seagreen;
-  color: honeydew;
+  color: pink;
   font-family: futura;
   text-align: center;
+}
+
+button {
+  background-color: ghostwhite;
+}
+
+input {
+  background-color: ghostwhite;
+}
+
+#table_input{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#empty{
+  background-color: blue;
+}
+
+#open{
+  background-color: hotpink;
+}
+
+.table {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: inline;
+}
+
+#floor {
+  margin-top: 10%;
+  margin-left: 15%;
+
 }
