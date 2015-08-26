@@ -1,0 +1,10 @@
+<h3> Enter New Item Information </h3>
+
+
+<form action="/items" method="post">
+  <input type="text" name="item[name]" placeholder="Item Name">
+  <select name="item[category]"><% @items.each do |item| %> <option value="<%= item.category %>">  <%= item.category %>  </option> <% end %></select> 
+  <input type="text" name="item[sub_category]" placeholder="Sub-Category?">
+  <input type="text" name="item[price]" placeholder="$$$$">
+  <input type="submit" value="Let's Boogie">
+</form>

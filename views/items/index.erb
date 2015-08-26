@@ -1,1 +1,16 @@
 
+<ul>
+  <% @items.each do |item| %>
+    <li>
+        <%= item.name %>
+        <form action="/items/<%= item.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit"> Remove </button>
+        </form>
+    </li>
+  <% end %>
+</ul>
+
+<form class = "link" action="/items/new">
+     <input type="submit" value="Add New Item">
+ </form>

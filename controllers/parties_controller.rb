@@ -21,7 +21,8 @@ class PartiesController < ApplicationController
 #show party
   get '/:id' do
     @party = Party.find(params[:id])
-    #@items = Order.where(item_id: params[:id])
+    @orders = Order.all.where(party_id: params[:id])
+    @items = Item.all
     erb :'parties/show'
   end
 

@@ -1,17 +1,33 @@
 class ItemsController < ApplicationController
 
   get '/foods' do
-    
     @items = Item.all.where("category = 'foods'")
-
-    erb :index
+    erb :'items/index'
   end
-
 
   get '/drinks' do
-
     @items = Item.all.where("category = 'drinks'")
-
-    erb :index
+    erb :'items/index'
   end
+
+
+  get '/new' do
+    @items = Item.all
+    erb :'items/new'
+  end
+
+
+  post '/' do
+    item = Item.create(params[:item])
+    redirect "/"
+  end
+
+  #delete item
+    delete '/:id' do
+      item = Item.find(params[:id])
+      item.delete()
+      redirect '/'
+    end
+
+
 end

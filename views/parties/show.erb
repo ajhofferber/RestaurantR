@@ -4,6 +4,39 @@
 <%= @party.num_in_party %> members in party
 <br>
 Ticket Status: <%= @party.status%>
+<br>
+
+
+<% @orders.each do |order| %>
+<p>
+   <%=order.item.name%>
+ </p>
+    <% end %>
+
+
+
+<form action="/../orders" method="post">
+
+  <select name="order[party_id]">
+      <option value="<%= @party.id %>">
+        <%= @party.table_number %>
+      </option>
+  </select>
+
+  <select name="order[item_id]">
+    <% @items.each do |item| %>
+      <option value="<%= item.id %>">
+        <%= item.name %>
+      </option>
+    <% end %>
+  </select>
+
+
+
+  <input type="submit" value="Order Up!">
+
+</form>
+
 
 
 <form class = "link" action="/parties">
