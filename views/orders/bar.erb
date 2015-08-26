@@ -1,0 +1,5 @@
+<%@orders.each do |order|%>
+ <%if order.item.category == "drinks"%>
+<h5>  Table Number: <%= order.party.table_number%> - <%= order.item.name %> </h5>
+ <%end%>
+<%end%>

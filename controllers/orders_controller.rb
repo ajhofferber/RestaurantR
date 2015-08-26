@@ -11,19 +11,31 @@ class OrdersController < ApplicationController
   erb :'orders/new'
 end
 
-# '/orders'
+ get '/kitchen' do
+   @orders= Order.all
+   erb :'orders/kitchen'
+  end
+
+ get '/bar' do
+   @orders= Order.all
+   erb :'orders/bar'
+end
+
 post '/' do
   order = Order.create(params[:order])
   redirect "/parties/#{order.party_id}"
 end
 
 
-# delete '/:id' do
-#   item = Item.find(params[:id])
-#   item.delete()
-#   redirect '/'
-# end
-#
+#Order.find().item.category = "drinks"
+
+
+ delete '/:id' do
+   order = Order.find(params[:id])
+   order.delete()
+   redirect "/parties/#{order.party_id}"
+ end
+
 
 
 end

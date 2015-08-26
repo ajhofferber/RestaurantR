@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
 
+  get '/' do
+    @items =Item.all
+    erb :'items/index'
+  end
+
   get '/foods' do
     @items = Item.all.where("category = 'foods'")
     erb :'items/index'
