@@ -1,37 +1,39 @@
-<h1>Hotel Albatross WaiterAid</h1>
+<h1 id ="homepage"> Hotel Albatross</h1>
 
 
 
 
-
+<div class ="row">
+<div id="main-buttons" class = "ten columns" >
 <form class = "link" action="/parties/new">
-     <input type="submit" value="Open New Ticket">
+     <input class="main" type="submit" value="Open New Ticket">
  </form>
 
-
  <form class = "link" action="/items/foods">
-      <input type="submit" value="View Food Menu">
+      <input type="submit" class="main"value="View Food Menu">
   </form>
 
-
-  <form class = "link" action="/items/drinks">
-       <input type="submit" value="View Drink Menu">
+  <form class ="link" action="/items/drinks">
+       <input type="submit" class="main" value="View Drink Menu">
    </form>
+   </div>
 
 
-
+<div class = "two columns" >
 <section class="parties">
   <h3>Open Tickets</h3>
 
   <ul>
     <% @parties.each do |party| %>
       <li>
-        <a href="/parties/<%= party.id %>">Table Number <%= party.table_number %></a>
+        <a class= "table-list" href="/parties/<%= party.id %>">Table Number <%= party.table_number %></a>
         <form action="/parties/<%= party.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button type="submit"> Remove </button>
+          <button class= "table-list" type="submit"> Remove </button>
         </form>
       </li>
     <% end %>
   </ul>
 </section>
+</div>
+</div>

@@ -1,15 +1,25 @@
+<h3 class="item-menu"> MENU </h3>
 
-<ul>
-  <% @items.each do |item| %>
-    <li>
-        <%= item.name %>
+
+<div class ="row">
+
+  <% @items.each_with_index do |item, index| %>
+  <div class = "item-show six columns">
+      <h3>  <%= item.name %> </h3>
+        <h5> <%= item.sub_category%>   $<%=item.price%> </h5>
+        <p><%=item.description%>
         <form action="/items/<%= item.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button type="submit"> Remove </button>
+          <button class = "remove-menu-item" type="submit"> Remove </button>
         </form>
-    </li>
-  <% end %>
-</ul>
+        <p>
+    </div>
+  <% if (index+1)%2 == 0%>
+ </div>
+ <div class ="row">
+  <%end%>
+<%end%>
+</div>
 
 <form class = "link" action="/items/new">
      <input type="submit" value="Add New Item">

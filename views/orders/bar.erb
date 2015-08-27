@@ -2,7 +2,13 @@
 
 
 <%@orders.each do |order|%>
+
  <%if order.item.category == "drinks"%>
   <h5 class = 'order' data-start-time= "<%=order.created_at%>">  Table Number: <%= order.party.table_number%> - <%= order.item.name %> </h5>
+  <!-- <form action="/orders/<%=order.id%>" method="put">
+        <input type="hidden" name="_method" value="update">
+        <button type="submit"> order up </button>
+      </form> -->
+
  <%end%>
 <%end%>
