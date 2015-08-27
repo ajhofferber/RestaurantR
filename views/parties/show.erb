@@ -41,15 +41,21 @@ Add Some Grub
 
 
 
-  <button class ="modal" id="open-modal">Reciept?</button>
+  <button class ="modal-style" id="open-modal">Reciept?</button>
 
 
-  <div class= "modal" id="modal">
+  <div  id="modal" >
       <div class="modal-content">
         <span id="close-modal">X</span>
-        <!-- <div class="modal-body">
-          <img src="http://cdn.meme.am/instances2/500x/1556891.jpg" alt="Modal" />
-        </div> -->
+        <div class="modal-body">
+          <h3> THANKS FOR DINING </h3>
+
+          <% @orders.each do |order| %>
+          <h5><%= order.item.name%> -- $<%=order.item.price%>.00</h5>
+          <%end%>
+
+          <%= @price %>
+        </div>
       </div>
     </div>
 

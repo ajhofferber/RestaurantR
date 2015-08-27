@@ -1,4 +1,4 @@
-<h3> Floor Status </h3>
+<h2> Floor Status </h2>
 
 <a href="/parties/new"> Open New Ticket </a>
 
@@ -10,15 +10,15 @@
   <% end %>
 
 
-
-<div class = "party-index-map">
+<div id="index-floor">
+<div class ="row">
   <%(1..15).to_a.each do |num| %>
     <%occupied = false %>
     <% @parties.each do |party|%>
      <% if party.table_number == num %>
-  <div class ="two columns">
+  <div class ="one columns">
         <form action="/parties/<%= party.id %>" method="get">
-          <button id="<%=party.status%>" class ="table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
+          <button id="<%=party.status%>" class ="index-table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
        </form>
   </div>
     <% occupied = true %>
@@ -26,11 +26,16 @@
 
      <% end %>
      <% if occupied == false %>
-  <div class ="two columns">
+  <div class ="one columns">
        <form action="/parties/new" method="post">
-         <button id ="empty" class ="table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
+         <button id ="empty" class ="index-table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
       </form>
   </div>
       <%end%>
+      <% if num%5 == 0%>
+    </div>
+    <div class ="row">
       <%end%>
+    <% end %>
+</div>
 </div>

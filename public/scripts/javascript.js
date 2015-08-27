@@ -1,6 +1,7 @@
 console.log("loooooooooaded.");
 $(document).ready(function() {
-
+  $("#open-modal").on("click", openModal);
+  $("#close-modal").on("click", closeModal);
 
   var list = $('.order');
 
@@ -17,16 +18,17 @@ $(document).ready(function() {
   };
 
 
-
-  $("#open-modal").on("click", function() {
-    console.log("You clicked the open button!");
-    $("#modal").toggle();
-  });
-
-  // Add an event to CLOSE the modal
-  $("#close-modal").on("click", function() {
-    console.log("You clicked the close button.");
-    $("#modal").toggle();
-  });
-
 });
+
+
+
+
+
+
+function openModal(){
+  $("#modal").toggle();
+};
+
+function closeModal(){
+  $("#modal").toggle();
+};
