@@ -42,7 +42,7 @@ end
     @items = Item.all
     @foods = Item.all.where("category = 'foods'")
     @drinks = Item.all.where("category = 'drinks'")
-    @price = @orders.each.item.price
+    
     erb :'parties/show'
   end
 

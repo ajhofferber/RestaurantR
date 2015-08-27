@@ -14,7 +14,7 @@ body {
 
 h1 {
   font-family: 'Megrim', cursive;
-  font-size: 90px;
+  font-size: 100px;
   color: lightpink;
   float: left;
   margin-left: 10%;
@@ -24,6 +24,7 @@ h1 {
 h2 {
   font-family: 'Megrim', cursive;
   font-size: 60px;
+  padding: 5%;
 }
 
 h3{
@@ -42,6 +43,14 @@ h5[class="tableshow"] {
 .tableshowelement{
   font-size: 30px;
   display: inline;
+}
+
+.order{
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  color: dimgrey;
+  border-radius: 20px;
 }
 
 .index-table{
@@ -215,8 +224,4 @@ form {
 
 h3 .item-menu {
   font-size: 3em;
-}
-
-.party-index-map{
-
 }

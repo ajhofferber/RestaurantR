@@ -50,11 +50,14 @@ Add Some Grub
         <div class="modal-body">
           <h3> THANKS FOR DINING </h3>
 
+            <%total = 0 %>
           <% @orders.each do |order| %>
-          <h5><%= order.item.name%> -- $<%=order.item.price%>.00</h5>
+            <h5><%=order.item.name%> -- $<%=order.item.price%>.00</h5>
+             <% total += order.item.price%>
           <%end%>
-
-          <%= @price %>
+          ********************************************
+              <h5>Your Total is: $<%=total%>.00</h5>
+              <p>Tip if You're Hip! 10%: $<%=total * 0.1%>0 | 15%: $<%=total * 0.15%>0 | 20%: $<%=total * 0.2%>0 </p>
         </div>
       </div>
     </div>
