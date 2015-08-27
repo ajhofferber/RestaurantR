@@ -27,12 +27,22 @@ class OrdersController < ApplicationController
       order = Order.create(params[:order])
       redirect "/parties/#{order.party_id}"
     end
-    # 
-    # put "/:id" do
-    #  order = Order.find(params[:id])
-    #  order.update(params[status: 1])
-    #  redirect "/"
-    # end
+
+    post "/kitchen/:id" do
+     order = Order.find(params[:id])
+     Order.where(id: "#{order.id}").update_all(status: 1)
+     redirect "/orders/kitchen"
+    end
+
+    post "/bar/:id" do
+     order = Order.find(params[:id])
+     Order.where(id: "#{order.id}").update_all(status: 1)
+     redirect "/orders/bar"
+    end
+
+
+
+
 
 
      delete '/:id' do

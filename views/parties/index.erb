@@ -1,13 +1,36 @@
-<h3> Open Tables </h3>
+<h3> Floor Status </h3>
 
 <a href="/parties/new"> Open New Ticket </a>
 
-<ul>
+
   <% @parties.each do |party| %>
-    <li>
-      <%= party.table_number %>
-      <%= party.num_in_party %>
-      <%= party.status %>
-    </li>
+
+    <h5>  Table <%=party.table_number%>, Party of <%=party.num_in_party%>. Ticket Stauts: <%= party.status %></h5>
+
   <% end %>
-</ul>
+
+
+
+<div class = "party-index-map">
+  <%(1..15).to_a.each do |num| %>
+    <%occupied = false %>
+    <% @parties.each do |party|%>
+     <% if party.table_number == num %>
+  <div class ="two columns">
+        <form action="/parties/<%= party.id %>" method="get">
+          <button id="<%=party.status%>" class ="table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
+       </form>
+  </div>
+    <% occupied = true %>
+      <% end %>
+
+     <% end %>
+     <% if occupied == false %>
+  <div class ="two columns">
+       <form action="/parties/new" method="post">
+         <button id ="empty" class ="table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
+      </form>
+  </div>
+      <%end%>
+      <%end%>
+</div>

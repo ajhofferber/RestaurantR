@@ -1,20 +1,37 @@
 
-<h3> Table Number <%= @party.table_number %> </h3>
+<h3 class = "tableshow"> Table Number <%= @party.table_number %> </h3>
+<h5 class ="tableshow"><%= @party.num_in_party %> members in party</h5>
+<h5 class ="tableshow"> Ticket Status: <%= @party.status%></h5>
+************************************************************<br>
+Add Some Grub
 <br>
-<%= @party.num_in_party %> members in party
-<br>
-Ticket Status: <%= @party.status%>
-<br>
-<form action="/parties/<%= @party.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit"> Close Ticket </button>
-</form>
+<div class = "order-input">
+<form action="/../orders" method="post">
 
+  <select name="order[party_id]">
+      <option value="<%=@party.id %>">
+        <%= @party.table_number %>
+      </option>
+  </select>
+
+  <select name="order[item_id]">
+    <% @items.each do |item| %>
+      <option value="<%= item.id %>">
+        <%= item.name %>
+      </option>
+    <% end %>
+  </select>
+  <input class ="button" type="submit" value="Got it!">
+
+</form>
+</div>
+************************************************************
+<br>
 
 <% @orders.each do |order| %>
-<p>
+<p class ="tableshowelement">
    <%=order.item.name%>
-    <form action="/orders/<%=order.id%>" method="post">
+    <form class ="tableshowelment" action="/orders/<%=order.id%>" method="post">
           <input type="hidden" name="_method" value="delete">
           <button type="submit"> Remove Order </button>
         </form>
@@ -23,30 +40,21 @@ Ticket Status: <%= @party.status%>
 
 
 
-<form action="/../orders" method="post">
 
-  <select name="order[party_id]">
-      <option value="<%=@party.id %>">
-        <%= @party.table_number %>
-      </option>
-  </select>
+  <button class ="modal" id="open-modal">Reciept?</button>
+
+
+  <div class= "modal" id="modal">
+      <div class="modal-content">
+        <span id="close-modal">X</span>
+        <!-- <div class="modal-body">
+          <img src="http://cdn.meme.am/instances2/500x/1556891.jpg" alt="Modal" />
+        </div> -->
+      </div>
+    </div>
+
+
 <br>
-
-
-  <select name="order[item_id]">
-
-    <% @items.each do |item| %>
-
-      <option value="<%= item.id %>">
-        <%= item.name %>
-      </option>
-    <% end %>
-  </select>
-  <input class ="button" type="submit" value="Order Up!">
-
-</form>
-
-
 
 <form class = "link" action="/parties">
      <button type="submit" value="Back to Open Tickets">Back to Open Tickets </button>
@@ -55,4 +63,11 @@ Ticket Status: <%= @party.status%>
 
  <form class = "link" action="/">
       <button  type="submit" value="Home"> Home </button>
+  </form>
+
+
+
+  <form action="/parties/<%= @party.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit"> Close Ticket </button>
   </form>
