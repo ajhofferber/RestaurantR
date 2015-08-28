@@ -319,7 +319,7 @@ h3 .item-menu {
   display: inline;
 }
 
-@media (min-width : 200px) and (max-width : 370px){
+@media (min-width : 200px) and (max-width : 376px){
 
   .container{
     width: 90%;
