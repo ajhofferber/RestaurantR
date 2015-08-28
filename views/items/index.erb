@@ -6,11 +6,11 @@
   <% @items.each_with_index do |item, index| %>
   <div class = "item-show six columns">
       <h3>  <%= item.name %> </h3>
-        <h5> <%= item.sub_category%>   $<%=item.price%> </h5>
+        <h5> <%= item.sub_category%>   $<%=('%.2f' % (item.price))%> </h5>
         <p><%=item.description%>
         <form action="/items/<%= item.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button class = "remove-menu-item" type="submit"> Remove </button>
+          <button class = "remove-menu-item" type="submit"> X </button>
         </form>
         <p>
     </div>
@@ -24,3 +24,7 @@
 <form class = "link" action="/items/new">
      <input type="submit" value="Add New Item">
  </form>
+ 
+ <form class = "link" action="/">
+      <input type="submit" value="Home">
+  </form>

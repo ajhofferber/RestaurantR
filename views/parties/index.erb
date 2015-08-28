@@ -1,7 +1,11 @@
 <h2> Floor Status </h2>
 
-<a href="/parties/new"> Open New Ticket </a>
-
+<form class = "link" action="/parties/new">
+     <input type="submit" value="Open A New Ticket">
+ </form>
+ <form class = "link" action="/">
+      <input type="submit" value="Home">
+  </form>
 
   <% @parties.each do |party| %>
 
