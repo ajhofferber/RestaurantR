@@ -1,7 +1,14 @@
 console.log("loooooooooaded.");
 $(document).ready(function() {
-  $("#open-modal").on("click", openModal);
-  $("#close-modal").on("click", closeModal);
+  $("#reciept-open-modal").on("click", openModal);
+  $("#reciept-close-modal").on("click", closeModal);
+
+  $("#menu-open-modal").on("click", openModal);
+  $("#menu-close-modal").on("click", closeModal);
+
+  $("#orders-open-modal").on("click", openModal);
+  $("#orders-close-modal").on("click", closeModal);
+
 
   var list = $('.order');
 
@@ -20,15 +27,11 @@ $(document).ready(function() {
 
 });
 
-
-
-
-
-
 function openModal(){
-  $("#modal").toggle();
+
+  $(this).find(".modal").toggle();
 };
 
 function closeModal(){
-  $("#modal").toggle();
+  $(this).find(".modal").toggle();
 };

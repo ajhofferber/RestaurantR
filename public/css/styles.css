@@ -92,7 +92,7 @@ button[class="modal-style"]{
   font-size: 1.25em;
 }
 
-#modal {
+.modal {
   top: 0;
   left: 0;
   position: fixed;
@@ -102,12 +102,27 @@ button[class="modal-style"]{
   background-color: rgba(0, 0, 0, .7);
 }
 
-#close-modal {
+#reciept-close-modal {
   position: absolute;
   left: 96%;
   z-index: 2;
   font-size: 1.5em;
-  border-radius: 50%;
+  border-radius: 25px;
+  border: 3px solid seagreen;
+  height: 1em;
+  width: 2.25em;
+  text-align: center;
+  background-color: lightpink;
+  line-height: 1;
+  color: seagreen;
+}
+
+#menu-close-modal {
+  position: absolute;
+  left: 96%;
+  z-index: 2;
+  font-size: 1.5em;
+  border-radius: 25px;
   border: 3px solid seagreen;
   height: 1em;
   width: 1em;
@@ -117,24 +132,79 @@ button[class="modal-style"]{
   color: seagreen;
 }
 
-#close-modal:hover {
+#orders-close-modal {
+  position: absolute;
+  left: 96%;
+  z-index: 2;
+  font-size: 1.5em;
+  border-radius: 25px;
+  border: 3px solid seagreen;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  background-color: lightpink;
+  line-height: 1;
+  color: seagreen;
+}
+
+#reciept-close-modal:hover {
   cursor: pointer;
 }
 
-.modal-content {
+#menu-close-modal:hover {
+  cursor: pointer;
+}
+
+#orders-close-modal:hover {
+  cursor: pointer;
+}
+
+.reciept-modal-content {
   position: relative;
   margin: 0 35%;
   background-color: white;
   top: 10%;
-  width: 30%;
+  width: 25%;
 }
 
-.modal-body {
+.menu-modal-content {
+  position: relative;
+  margin: 0 35%;
+
+  top: 10%;
+  width: 25%;
+}
+
+.orders-modal-content {
+  position: relative;
+  margin: 0 35%;
+  top: 10%;
+  width: 25%;
+}
+
+.reciept-modal-body {
   position: absolute;
   width: 100%;
   top: 10px;
   background-color: white;
   border: 10px solid white;
+  border-radius: 10px;
+  z-index: 1;
+  color: seagreen;
+}
+
+.menu-modal-body {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  z-index: 1;
+  color: seagreen;
+}
+
+.orders-modal-body {
+  position: absolute;
+  width: 100%;
+  top: 10px;
   z-index: 1;
   color: seagreen;
 }
@@ -159,7 +229,7 @@ select {
   border: 2px dotted ghostwhite;
   list-style: none;
   width: 100%;
-  margin-left: -20%;
+  margin-left: -40%;
 }
 
 .parties a{
@@ -224,4 +294,8 @@ form {
 
 h3 .item-menu {
   font-size: 3em;
+}
+
+.main-buttons{
+  display: inline;
 }

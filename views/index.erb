@@ -4,20 +4,46 @@
 
 
 
-<div class ="row">
-<div id="main-buttons" class = "ten columns" >
+<div class = "row">
+  <div class ="ten columns">
+<div class = "main-buttons">
 <form class = "link" action="/parties/new">
      <input class="main" type="submit" value="Open New Ticket">
  </form>
-
- <form class = "link" action="/items/foods">
-      <input type="submit" class="main"value="View Food Menu">
-  </form>
-
-  <form class ="link" action="/items/drinks">
-       <input type="submit" class="main" value="View Drink Menu">
-   </form>
-   </div>
+ </div>
+<div id = "menu-open-modal" class = "main-buttons">
+  <input  type="submit" class="main"value="View Menus">
+      <div class="modal">
+        <div class="menu-modal-content">
+          <span id="menu-close-modal">X</span>
+          <div class="menu-modal-body">
+            <form class = "link" action="/items/foods">
+                <input type="submit" class="main"value="View Food Menu">
+              </form>
+              <form class ="link" action="/items/drinks">
+                   <input type="submit" class="main" value="View Drink Menu">
+               </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<div id = "orders-open-modal" class = "main-buttons">
+<input type="submit" class="main"value="View Order Status">
+    <div class ="modal">
+      <div class="orders-modal-content">
+        <span id="orders-close-modal">X</span>
+        <div class="orders-modal-body">
+          <form class = "link" action="/orders/kitchen">
+              <input type="submit" class="main"value="Check the Kitchen">
+            </form>
+            <form class ="link" action="/orders/bar">
+                 <input type="submit" class="main" value="Check the Bar">
+             </form>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
 
 
 <div class = "two columns" >
