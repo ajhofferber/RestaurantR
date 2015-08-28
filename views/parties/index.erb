@@ -8,9 +8,9 @@
   </form>
 
   <% @parties.each do |party| %>
-
+<% if party.status == 'open' %>
     <h5>  Table <%=party.table_number%>, Party of <%=party.num_in_party%>. Ticket Stauts: <%= party.status %></h5>
-
+<%end%>
   <% end %>
 
 

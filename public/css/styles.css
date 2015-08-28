@@ -8,12 +8,21 @@ body {
 
 .container {
   background-color: rgba(22, 94, 70, 0.95);
-  height: 120%;
+  height: 110%;
   margin-top: 1%;
   border-radius: 10px;
   border: 4px dotted lightpink;
   padding-bottom: 10%;
   margin-bottom: 1%;
+}
+
+.divider{
+  height: 2em;
+  width: 100%
+}
+
+.divider-img{
+ width: 40%;
 }
 
 h1 {
@@ -28,7 +37,8 @@ h1 {
 h2 {
   font-family: 'Megrim', cursive;
   font-size: 4.5em;
-  padding: 5%;
+  padding-top: 5%;
+
 }
 
 h3{
@@ -45,8 +55,18 @@ h5[class="tableshow"] {
 }
 
 .tableshowelement{
-  font-size: 1.5em;
+  font-size: 1.4em;
+  line-height: 1em;
   display: inline;
+}
+
+.ticket-item[type="submit"]{
+  background-color:rgba(235, 161, 205, 0.69);
+  border-radius: 50%;
+  height:1.5em;
+  width: 1.5em;
+  line-height: .75em;
+  text-align: center;
 }
 
 .order{
@@ -79,7 +99,9 @@ h5[class="tableshow"] {
 }
 
 #index-floor{
-  margin-left: 35%;
+  width: 70%;
+  margin-right: 15%;
+  margin-left: 37%;
 }
 .order-input {
   margin-top: 3%;
@@ -285,7 +307,7 @@ form {
 }
 
 #open{
-  background-color: hotpink;
+  background-color: rgb(241, 196, 35);
 }
 
 .table {
@@ -303,7 +325,9 @@ form {
 
 #floor {
   margin-top: 10%;
-  margin-left: 15%;
+  width: 80%;
+  margin-left:24%;
+  margin-right: 20%;
 }
 
 .remove-menu-item[type="submit"]{
@@ -359,6 +383,7 @@ h2{
 
 h3{
   font-size: 2em;
+  margin-top: 2%;
   margin-bottom: 1%;
 }
 
@@ -403,14 +428,52 @@ li{
   height: 3.5em;
   width: 3.5em;
   display: inline;
-  margin-top: 10%;
+  margin-top: 5%;
   font-size: .75em;
   color: seagreen;
   text-align: center;
-  border: 4px solid white;
+  border: 1% solid white;
 }
+
 .two{
   width: 40%;
+}
+
+button[class="modal-style"]{
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
+  height: 5%;
+  background-color: pink;
+  border: 2px solid dimgrey;
+  border-radius: 20px;
+  color: dimgrey;
+  font-size: .75em;
+}
+
+h3[class="tableshow"] {
+  font-size: 2.75em;
+  width:90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.reciept-modal-content {
+  position: relative;
+  margin: 0 25%;
+  background-color: white;
+  top: 10%;
+  width: 50%;
+}
+
+h5[class="reciept"]{
+  font-size: 1.2em;
+}
+
+h5[class="reciept-total"]{
+  font-size: 1.45em;
+  margin-top: 10%;
+  margin-bottom: 7%;
 }
 
 }

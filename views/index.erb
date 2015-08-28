@@ -52,6 +52,7 @@
 
   <ul>
     <% @parties.each do |party| %>
+    <% if party.status == 'open' %>
       <li>
         <a class= "table-list" href="/parties/<%= party.id %>">Table Number <%= party.table_number %></a>
         <form action="/parties/<%= party.id %>" method="post">
@@ -59,6 +60,7 @@
           <button class= "table-list" type="submit"> Remove </button>
         </form>
       </li>
+      <% end %>
     <% end %>
 
   </ul>

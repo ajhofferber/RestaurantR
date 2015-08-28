@@ -32,7 +32,11 @@ end
     redirect "/parties/#{party.id}"
   end
 
-
+  post "/:id" do
+    party = Party.find(params[:id])
+    Party.where(id: "#{party.id}").update_all(status: 1)
+    redirect "/"
+  end
 
 #show party
   get '/:id' do
@@ -42,7 +46,7 @@ end
     @items = Item.all
     @foods = Item.all.where("category = 'foods'")
     @drinks = Item.all.where("category = 'drinks'")
-    
+
     erb :'parties/show'
   end
 

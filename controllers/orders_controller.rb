@@ -42,9 +42,6 @@ class OrdersController < ApplicationController
 
 
 
-
-
-
      delete '/:id' do
        order = Order.find(params[:id])
        order.delete()

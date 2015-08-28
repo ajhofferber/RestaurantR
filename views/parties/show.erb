@@ -2,7 +2,7 @@
 <h3 class = "tableshow"> Table Number <%= @party.table_number %> </h3>
 <h5 class ="tableshow"><%= @party.num_in_party %> members in party</h5>
 <h5 class ="tableshow"> Ticket Status: <%= @party.status%></h5>
-************************************************************<br>
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
 Add Some Grub
 <br>
 <div class = "order-input">
@@ -25,20 +25,20 @@ Add Some Grub
 
 </form>
 </div>
-************************************************************
-<br>
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+
 
 <% @orders.each do |order| %>
 <p class ="tableshowelement">
    <%=order.item.name%>
     <form class ="tableshowelment" action="/orders/<%=order.id%>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button type="submit"> Remove Order </button>
+          <button class ="ticket-item" type="submit"> x </button>
         </form>
  </p>
     <% end %>
 
-
+    <div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
 
 <div id="reciept-open-modal">
 <button class ="modal-style" >Reciept?</button>
@@ -50,11 +50,11 @@ Add Some Grub
 
             <%total = 0 %>
           <% @orders.each do |order| %>
-            <h5><%=order.item.name%> -- $<%=('%.2f' % (order.item.price))%></h5>
+            <h5 class = "reciept"><%=order.item.name%> -- $<%=('%.2f' % (order.item.price))%></h5>
              <% total += order.item.price%>
           <%end%>
-          ********************************************
-              <h5>Your Total is: $<%=('%.2f' % (total))%></h5>
+
+              <h5 class= "reciept-total">Your Total is: $<%=('%.2f' % (total))%></h5>
               <p>Tip if You're Hip! 10%: $<%=('%.2f' % (total * 0.1))%> | 15%: $<%=total * 0.15%>0 | 20%: $<%=total * 0.2%>0 </p>
         </div>
       </div>
@@ -73,8 +73,13 @@ Add Some Grub
   </form>
 
 
-
+<!--
   <form action="/parties/<%= @party.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit"> Close Ticket </button>
-  </form>
+  </form> -->
+
+
+  <form action="/parties/<%=@party.id%>" method="post">
+    <input type="submit" value="Close Ticket">
+    </form>

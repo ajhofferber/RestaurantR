@@ -1,4 +1,4 @@
-<h3 class="item-menu"> MENU </h3>
+<h3 class="item-menu"> Make a Menu Edit </h3>
 
 
 <div class ="row">
@@ -8,8 +8,11 @@
       <h3>  <%= item.name %> </h3>
         <h5> <%= item.sub_category%>   $<%=('%.2f' % (item.price))%> </h5>
         <p><%=item.description%>
-
-        </p>
+        <form action="/items/<%= item.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button class = "remove-menu-item" type="submit"> X </button>
+        </form>
+        <p>
     </div>
   <% if (index+1)%2 == 0%>
  </div>
@@ -21,10 +24,6 @@
 <form class = "link" action="/items/new">
      <input type="submit" value="Add New Item">
  </form>
-
- <form class = "link" action="/items/edit">
-      <input type="submit" value="Edit the Menu">
-  </form>
 
  <form class = "link" action="/">
       <input type="submit" value="Home">

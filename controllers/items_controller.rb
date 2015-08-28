@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
-  get '/' do
+  get '/edit' do
     @items =Item.all
-    erb :'items/index'
+    erb :'items/edit'
   end
 
   get '/foods' do
