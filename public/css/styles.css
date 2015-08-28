@@ -12,6 +12,8 @@ body {
   margin-top: 1%;
   border-radius: 10px;
   border: 4px dotted lightpink;
+  padding-bottom: 10%;
+  margin-bottom: 1%;
 }
 
 h1 {
@@ -315,4 +317,100 @@ h3 .item-menu {
 
 .main-buttons{
   display: inline;
+}
+
+@media (min-width : 200px) and (max-width : 370px){
+
+  .container{
+    width: 90%;
+  }
+
+h1{
+  font-size: 3.5em;
+  text-align: center;
+  margin-left: -3%;
+  margin-bottom: .5%;
+}
+
+  .index-table{
+    border-radius: 50%;
+    height: 2.8em;
+    width: 2.8em;
+    display: inline;
+    margin: 5%;
+    font-size: .75em;
+    color: seagreen;
+    padding: 2%;
+    text-align: center;
+    border: .2em solid white;
+  }
+
+  .parties{
+    border: 2px dotted ghostwhite;
+    list-style: none;
+    width: 185%;
+    margin-left: 30%;
+}
+
+h2{
+  font-size: 2.5em;
+  margin-bottom: 2px;
+}
+
+h3{
+  font-size: 2em;
+  margin-bottom: 1%;
+}
+
+h5{
+  font-size: .75em;
+  margin-bottom: 1px;
+}
+
+.one {
+  width: 70%;
+  margin-left: -30%;
+  padding: 1%;
+}
+
+.main[type = "submit"] {
+ background-color: ghostwhite;
+ height: 30px;
+ width: 150px;
+ display: inline;
+ margin: 5%;
+ margin-top: 5%;
+}
+li{
+  margin: 0%;
+}
+
+.table-list{
+  font-size: .8em;
+  margin-bottom: 1%;
+
+}
+
+.table-list[type ="submit"]{
+  font-size: .5em;
+  height: 15px;
+  line-height: .5em;
+  padding: 1%;
+}
+
+.table {
+  border-radius: 50%;
+  height: 3.5em;
+  width: 3.5em;
+  display: inline;
+  margin-top: 10%;
+  font-size: .75em;
+  color: seagreen;
+  text-align: center;
+  border: 4px solid white;
+}
+.two{
+  width: 40%;
+}
+
 }

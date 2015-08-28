@@ -6,7 +6,7 @@
 
 <div class ="row">
 
-<%(1..15).to_a.each do |num| %>
+<%(1..16).to_a.each do |num| %>
   <%occupied = false %>
   <% @parties.each do |party|%>
    <% if party.table_number == num %>
@@ -27,7 +27,7 @@
 </div>
     <%end%>
 
-  <% if num%5 == 0%>
+  <% if num%4 == 0%>
 </div>
 <div class ="row">
   <%end%>
