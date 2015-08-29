@@ -21,6 +21,7 @@ $(document).ready(function() {
         list[i].style.backgroundColor = 'orange';
       } else {
         list[i].style.backgroundColor = 'red';
+        list[i].style.color ='ghostwhite'
       }
   };
 
