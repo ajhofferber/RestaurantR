@@ -476,4 +476,18 @@ h5[class="reciept-total"]{
   margin-bottom: 7%;
 }
 
+  .menu-modal-content {
+    position: relative;
+    margin: 0 25%;
+    top: 20%;
+    width: 50%;
+  }
+
+  .orders-modal-content {
+    position: relative;
+    margin: 0 25%;
+    top: 20%;
+    width: 50%;
+  }
+
 }
