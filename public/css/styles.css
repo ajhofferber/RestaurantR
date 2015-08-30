@@ -38,7 +38,12 @@ h2 {
   font-family: 'Megrim', cursive;
   font-size: 4.5em;
   padding-top: 5%;
+}
 
+.admin-link{
+  width: 12%;
+  margin-left: 82%;
+  margin-right: 6%;
 }
 
 h3{
@@ -70,6 +75,10 @@ h5[class="tableshow"] {
   font-size: .75em;
   color: pink;
   background-color: rgba(214, 210, 213, 0)
+}
+
+.server-submit{
+  margin: 5%;
 }
 
 .order{
@@ -418,7 +427,7 @@ li{
 }
 
 .table-list{
-  font-size: .8em;
+  font-size: 1em;
   margin-bottom: 1%;
 
 }
@@ -518,6 +527,31 @@ h5[class="receipt-total"]{
 
   .tip{
     font-size: .75em;
+  }
+
+  .admin-link{
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 15%;
+  }
+
+  .servers {
+    font-size: 1.3em;
+  }
+
+  .item-name{
+    font-size: 1.4em;
+  }
+
+  .main-modal[type="submit"]{
+    background-color: ghostwhite;
+    width: 70%;
+    display: inline;
+    margin: 5%;
+    margin-top: 5%;
+    padding: 3%;
+    height: 40%;
   }
 
 }

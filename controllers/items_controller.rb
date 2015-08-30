@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
     erb :'items/new'
   end
 
+  get "/:id/edit" do
+    @item = Item.find(params[:id])
+    erb :'items/ind_edit'
+  end
 
   post '/' do
     item = Item.create(params[:item])

@@ -1,0 +1,25 @@
+<h3> Edit the Item</h3>
+
+<br/>
+
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+
+<br/>
+
+<form action="/items/<%=@item.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input class = "buttons" type="text" name="item[name]" placeholder="<%= @item.name %>">
+  <input class = "buttons" type="text" name="item[category]" placeholder="<%= @item.category %>">
+  <input class = "buttons" type="text" name="item[sub_category]" value="<%= @item.sub_category %>">
+  <input class = "buttons" type="text" name="item[price]" value="<%= @item.price %>">
+  <input class = "buttons" type="text" name="item[description]" placeholder="<%= @item.description %>">
+  <input type="submit" value="Submit Changes">
+  </form>
+
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+
+<br/>
+
+<form class = "link" action="/">
+   <input type="submit" value="Home">
+</form>

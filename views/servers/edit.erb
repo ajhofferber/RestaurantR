@@ -1,0 +1,16 @@
+<h3> Make Changes to Server </h3>
+
+<br/>
+
+<form action="/servers/<%=@server.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input class = "buttons" type="text" name="server[name]" placeholder="<%= @server.name %>">
+  <input class = "buttons" type="text" name="server[dob]" placeholder="<%=@server.dob%>">
+  <input type="submit" value="Update">
+</form>
+
+<br/>
+
+<form class ="link" action="/servers">
+  <input type="submit" value="Back to Server List">
+</form>

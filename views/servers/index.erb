@@ -1,3 +1,28 @@
+<h3>Server Information</h3>
+
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+
 <% @servers.each do |server|%>
-  <h4>Name: <%= server.name %> DOB: <%= server.dob %> Server ID: <%= server.id %><h4>
+  <h5 class="servers">Name: <%= server.name %></h5>
+  <h5 class="servers">DOB: <%= server.dob %> Server ID: <%= server.id %></h5>
+
+   <form action="/servers/<%= server.id %>" method="post">
+     <input type="hidden" name="_method" value="delete">
+     <button type="submit">Remove Server</button>
+   </form>
+   <form action="/servers/<%= server.id %>/edit">
+     <button> Edit Server Information </button>
+   </form>
 <% end %>
+
+<br/>
+
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+
+<form class ="link" action="/servers/new">
+  <input type="submit" value="Add A New Server">
+</form>
+
+<form class ="link" action="/">
+  <input type="submit" value="Home">
+</form>
