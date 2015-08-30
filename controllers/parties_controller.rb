@@ -1,32 +1,29 @@
 class PartiesController < ApplicationController
 
-#Party Index-show all the parties
+  #Party Index-show all the parties
   get '/' do
-    @parties = Party.all
+    @parties = Party.open
     erb :'parties/index'
   end
 
-
   get '/new' do
-    @parties = Party.all
+    @parties = Party.open
     @table_number = params[:table_number]
     erb :'parties/new'
   end
 
-
-
-#create new party
+  #create new party
   get '/new/:table_number' do
-    @parties = Party.all
+    @parties = Party.open
     @table_number = params[:table_number]
     erb :'parties/info'
   end
 
-post '/new' do
-  redirect "/parties/new/#{params[:table_number]}"
-end
+  post '/new' do
+    redirect "/parties/new/#{params[:table_number]}"
+  end
 
-#post new party
+  #post new party
   post '/' do
     party = Party.create(params[:party])
     redirect "/parties/#{party.id}"
@@ -38,7 +35,7 @@ end
     redirect "/"
   end
 
-#show party
+  #show party
   get '/:id' do
     @party = Party.find(params[:id])
     @table_number = params[:table_number]
@@ -50,15 +47,12 @@ end
     erb :'parties/show'
   end
 
-#delete party
+  #delete party
   delete '/:id' do
     party = Party.find(params[:id])
     party.orders.each {|order| order.delete }
     party.delete()
     redirect '/'
   end
-
-
-
 
 end

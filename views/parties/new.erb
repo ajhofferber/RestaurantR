@@ -1,36 +1,24 @@
 <h3> Select a Table </h3>
 
-
-
 <div id="floor">
-
-<div class ="row">
-
-<%(1..16).to_a.each do |num| %>
-  <%occupied = false %>
-  <% @parties.each do |party|%>
-   <% if party.table_number == num %>
-<div class ="two columns">
-      <form action="/parties/<%= party.id %>" method="get">
-        <button id="<%=party.status%>" class ="table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
-     </form>
-</div>
-  <% occupied = true %>
+  <div class="row">
+    <%(1..16).each do |num| %>
+      <div class ="two columns">
+        <% party = @parties.find_by(table_number: num) %>
+        <% if party %>
+          <form action="/parties/<%= party.id %>" method="get">
+            <button id="<%= party.status %>" class ="table" type="submit" name="party_id" value="<%= party.id %>"><%= num %></button>
+          </form>
+        <% else %>
+          <form action="/parties/new" method="post">
+            <button id="empty" class="table" type="submit" name="table_number" value="<%= num %>"><%= num %></button>
+          </form>
+        <% end %>
+      </div>
+      <% if num % 4 == 0 %>
+        </div>
+        <div class ="row">
+      <%end%>
     <% end %>
-
-   <% end %>
-   <% if occupied == false %>
-<div class ="two columns">
-     <form action="/parties/new" method="post">
-       <button id ="empty" class ="table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
-    </form>
-</div>
-    <%end%>
-
-  <% if num%4 == 0%>
-</div>
-<div class ="row">
-  <%end%>
-<% end %>
-</div>
+  </div>
 </div>

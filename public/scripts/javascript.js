@@ -1,7 +1,7 @@
 console.log("loooooooooaded.");
 $(document).ready(function() {
-  $("#reciept-open-modal").on("click", openModal);
-  $("#reciept-close-modal").on("click", closeModal);
+  $("#receipt-open-modal").on("click", openModal);
+  $("#receipt-close-modal").on("click", closeModal);
 
   $("#menu-open-modal").on("click", openModal);
   $("#menu-close-modal").on("click", closeModal);

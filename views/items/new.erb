@@ -1,18 +1,26 @@
 <h3> Enter New Item Information </h3>
 
-
 <form action="/items" method="post">
   <input type="text" name="item[name]" placeholder="Item Name">
-  <select name="item[category]"><% @items.each do |item| %> <option value="<%= item.category %>">  <%= item.category %>  </option> <% end %></select>
+
+  <select name="item[category]">
+    <% @items.each do |item| %>
+      <option value="<%= item.category %>"><%= item.category %></option>
+    <% end %>
+  </select>
+
   <input type="text" name="item[sub_category]" placeholder="Sub-Category?">
   <input type="text" name="item[price]" placeholder="$$$$">
-  <br>
+
+  <br/>
+
   <input type="text" style="width: 40%" name="item[description]" placeholder="Tell Us More About IT">
   <input type="submit" value="Let's Boogie">
 </form>
-<br>
-<br>
+
+<br/>
+<br/>
 
 <form class = "link" action="/">
-     <input type="submit" value="Home">
- </form>
+  <input type="submit" value="Home">
+</form>

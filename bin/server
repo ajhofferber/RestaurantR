@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Starting up server, ya dummy!"
+
+bundle exec rackup
+
+echo "l8r loser."

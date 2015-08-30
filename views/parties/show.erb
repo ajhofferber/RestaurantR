@@ -2,84 +2,81 @@
 <h3 class = "tableshow"> Table Number <%= @party.table_number %> </h3>
 <h5 class ="tableshow"><%= @party.num_in_party %> members in party</h5>
 <h5 class ="tableshow"> Ticket Status: <%= @party.status%></h5>
-<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+<div class= "divider">
+  <img class ="divider-img" src="/images/zzzzz line-divider copy.png">
+</div>
+
 Add Some Grub
-<br>
+
+<br/>
 <div class = "order-input">
-<form action="/../orders" method="post">
+  <form action="/../orders" method="post">
 
-  <select name="order[party_id]">
-      <option value="<%=@party.id %>">
-        <%= @party.table_number %>
-      </option>
-  </select>
+    <input type="hidden" name="order[party_id]" value="<%= @party.id %>"/>
 
-  <select name="order[item_id]">
-    <% @items.each do |item| %>
-      <option value="<%= item.id %>">
-        <%= item.name %>
-      </option>
-    <% end %>
-  </select>
-  <input id="order-submit" class ="button" type="submit" value="GO!">
+    <select name="order[item_id]">
+      <% @items.each do |item| %>
+        <option value="<%= item.id %>">
+          <%= item.name %>
+        </option>
+      <% end %>
+    </select>
+    <input id="order-submit" class ="button" type="submit" value="GO!">
 
-</form>
+  </form>
 </div>
 <div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
 
 
 <% @orders.each do |order| %>
-<p class ="tableshowelement">
-   <%=order.item.name%>
-    <form class ="tableshowelment" action="/orders/<%=order.id%>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <button class ="ticket-item" type="submit"> x </button>
-        </form>
- </p>
-    <% end %>
+  <p class ="tableshowelement">
+    <%= order.item.name %>
+    <form class ="tableshowelment" action="/orders/<%= order.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class ="ticket-item" type="submit"> x </button>
+    </form>
+  </p>
+<% end %>
 
-    <div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
+<div class= "divider"> <img class ="divider-img" src="/images/zzzzz line-divider copy.png"> </div>
 
-<div id="reciept-open-modal">
-<button class ="modal-style" >Reciept?</button>
+<div id="receipt-open-modal">
+  <button class ="modal-style" >Receipt?</button>
   <div  class="modal" >
-      <div class="reciept-modal-content">
-        <span id="reciept-close-modal">Print</span>
-        <div class="reciept-modal-body">
-          <h3> THANKS FOR DINING </h3>
+    <div class="receipt-modal-content">
+      <span id="receipt-close-modal">Print</span>
+      <div class="receipt-modal-body">
+        <h3> THANKS FOR DINING </h3>
 
-            <%total = 0 %>
-          <% @orders.each do |order| %>
-            <h5 class = "reciept"><%=order.item.name%> -- $<%=('%.2f' % (order.item.price))%></h5>
-             <% total += order.item.price%>
-          <%end%>
+        <%total = 0 %>
+        <% @orders.each do |order| %>
+        <h5 class = "receipt"><%=order.item.name%> -- $<%=('%.2f' % (order.item.price))%></h5>
+        <% total += order.item.price%>
+        <%end%>
 
-              <h5 class= "reciept-total">Your Total is: $<%=('%.2f' % (total))%></h5>
-              <p class ="tip">Tip if You're Hip! 10%: $<%=('%.2f' % (total * 0.1))%> | 15%: $<%=total * 0.15%>0 | 20%: $<%=total * 0.2%>0 </p>
-        </div>
+        <h5 class= "receipt-total">Your Total is: $<%=('%.2f' % (total))%></h5>
+        <p class ="tip">Tip if You're Hip! 10%: $<%=('%.2f' % (total * 0.1))%> | 15%: $<%=total * 0.15%>0 | 20%: $<%=total * 0.2%>0 </p>
       </div>
     </div>
+  </div>
 </div>
 
-<br>
+<br/>
 
 <form class = "link" action="/parties">
-     <button type="submit" value="Back to Open Tickets">Back to Open Tickets </button>
- </form>
+  <button type="submit" value="Back to Open Tickets">Back to Open Tickets </button>
+</form>
 
-
- <form class = "link" action="/">
-      <button  type="submit" value="Home"> Home </button>
-  </form>
-
+<form class = "link" action="/">
+  <button  type="submit" value="Home"> Home </button>
+</form>
 
 <!--
-  <form action="/parties/<%= @party.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button type="submit"> Close Ticket </button>
-  </form> -->
+<form action="/parties/<%= @party.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+<button type="submit"> Close Ticket </button>
+</form> -->
 
-
-  <form action="/parties/<%=@party.id%>" method="post">
-    <input type="submit" value="Close Ticket">
-    </form>
+<form action="/parties/<%=@party.id%>" method="post">
+  <input type="submit" value="Close Ticket">
+</form>

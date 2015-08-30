@@ -137,7 +137,7 @@ button[class="modal-style"]{
   background-color: rgba(0, 0, 0, .7);
 }
 
-#reciept-close-modal {
+#receipt-close-modal {
   position: absolute;
   left: 96%;
   z-index: 2;
@@ -182,7 +182,7 @@ button[class="modal-style"]{
   color: seagreen;
 }
 
-#reciept-close-modal:hover {
+#receipt-close-modal:hover {
   cursor: pointer;
 }
 
@@ -194,7 +194,7 @@ button[class="modal-style"]{
   cursor: pointer;
 }
 
-.reciept-modal-content {
+.receipt-modal-content {
   position: relative;
   margin: 0 35%;
   background-color: white;
@@ -217,7 +217,7 @@ button[class="modal-style"]{
   width: 40%;
 }
 
-.reciept-modal-body {
+.receipt-modal-body {
   position: absolute;
   width: 100%;
   top: 10px;
@@ -405,11 +405,12 @@ h5{
 
 .main[type = "submit"] {
  background-color: ghostwhite;
- height: 30px;
- width: 150px;
+ width: 60%;
  display: inline;
  margin: 5%;
  margin-top: 5%;
+ padding: 3%;
+ height: 40%;
 }
 
 li{
@@ -467,7 +468,7 @@ h3[class="tableshow"] {
   margin-right: 5%;
 }
 
-.reciept-modal-content {
+.receipt-modal-content {
   position: relative;
   margin: 0 25%;
   background-color: white;
@@ -475,11 +476,11 @@ h3[class="tableshow"] {
   width: 50%;
 }
 
-h5[class="reciept"]{
+h5[class="receipt"]{
   font-size: 1.2em;
 }
 
-h5[class="reciept-total"]{
+h5[class="receipt-total"]{
   font-size: 1.45em;
   margin-top: 10%;
   margin-bottom: 7%;

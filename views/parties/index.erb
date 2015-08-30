@@ -1,45 +1,36 @@
-<h2> Floor Status </h2>
+<h2>Floor Status</h2>
 
 <form class = "link" action="/parties/new">
-     <input type="submit" value="Open A New Ticket">
- </form>
- <form class = "link" action="/">
-      <input type="submit" value="Home">
-  </form>
+  <input type="submit" value="Open A New Ticket">
+</form>
 
-  <% @parties.each do |party| %>
-<% if party.status == 'open' %>
-    <h5>  Table <%=party.table_number%>, Party of <%=party.num_in_party%>. Ticket Stauts: <%= party.status %></h5>
-<%end%>
-  <% end %>
+<form class = "link" action="/">
+  <input type="submit" value="Home">
+</form>
 
+<% @parties.each do |party| %>
+  <h5>Table <%= party.table_number %>, Party of <%= party.num_in_party %>. Ticket Status: <%= party.status %></h5>
+<% end %>
 
 <div id="index-floor">
-<div class ="row">
-  <%(1..16).to_a.each do |num| %>
-    <%occupied = false %>
-    <% @parties.each do |party|%>
-     <% if party.table_number == num %>
-  <div class ="one columns">
-        <form action="/parties/<%= party.id %>" method="get">
-          <button id="<%=party.status%>" class ="index-table <%= num %>" type="submit" name="party_id" value="<%=party.id%>"> <%= num %> </button>
-       </form>
-  </div>
-    <% occupied = true %>
-      <% end %>
-
-     <% end %>
-     <% if occupied == false %>
-  <div class ="one columns">
-       <form action="/parties/new" method="post">
-         <button id ="empty" class ="index-table <%= num %>" type="submit" name="table_number" value="<%=num%>"> <%= num %> </button>
-      </form>
-  </div>
-      <%end%>
-      <% if num%4 == 0%>
-    </div>
-    <div class ="row">
+  <div class="row">
+    <%(1..16).each do |num| %>
+      <div class ="one column">
+        <% party = @parties.find_by(table_number: num) %>
+        <% if party %>
+          <form action="/parties/<%= party.id %>" method="get">
+            <button id="<%= party.status %>" class="index-table" type="submit" name="party_id" value="<%= party.id %>"><%= num %></button>
+          </form>
+        <% else %>
+          <form action="/parties/new" method="post">
+            <button id="empty" class="index-table" type="submit" name="table_number" value="<%= num %>"><%= num %></button>
+          </form>
+        <% end %>
+      </div>
+      <% if num % 4 == 0 %>
+        </div>
+        <div class ="row">
       <%end%>
     <% end %>
-</div>
+  </div>
 </div>
