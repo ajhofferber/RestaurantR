@@ -43,7 +43,7 @@ class PartiesController < ApplicationController
     @items = Item.all
     @foods = Item.all.where("category = 'foods'")
     @drinks = Item.all.where("category = 'drinks'")
-
+    @server = Server.where(party_id: params[:id])
     erb :'parties/show'
   end
 
