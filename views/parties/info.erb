@@ -6,9 +6,11 @@
       <h4> Table Number <%= @table_number %> </h4>
       <input type="hidden" name="party[table_number]" value = "<%= @table_number%>">
       <input type="text" name="party[num_in_party]" placeholder="Number in Party">
-      <select>
+
+
+      <select name ="party[server_id]">
         <% Server.all.each do |server| %>
-          <option value="<%= server.id %>" name="party[server_id]"><%= server.name %>
+          <option value="<%= server.id %>"><%= server.name %>
         <% end %>
       <input class="server-submit" type="submit" value="Let's Boogie">
     </form>
