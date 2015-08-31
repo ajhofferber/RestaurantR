@@ -7,7 +7,14 @@ A restaurant-management tool, designed for PC and mobile, that allows waitstaff,
 
 
 ##Screenshots
-![homepage](/images/Screen Shot 2015-08-30 at 8.48.40 PM.png?)
+
+<div style="text-align:center;">
+<img src="images/Screen Shot 2015-08-30 at 8.48.40 PM.png" width="250px">
+</div>
+
+<img src="images/Screen Shot 2015-08-30 at 8.48.40 PM.png" width="250px">
+
+
 ![homepage](./images/Screen Shot 2015-08-30 at 8.49.03 PM.png)
 ![homepage](/images/Screen Shot 2015-08-30 at 8.49.13 PM.png?raw=true)
 ![homepage](/images/Screen Shot 2015-08-30 at 8.49.41 PM.png?raw=true)
