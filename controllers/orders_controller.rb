@@ -22,10 +22,11 @@ class OrdersController < ApplicationController
   end
 
   post '/' do
-     order = Order.create(params[:order])
-     redirect "/parties/#{order.party_id}"
-   end
 
+       order = Order.create(params[:order])
+       redirect "/parties/#{order.party_id}"
+
+  end
 
   post "/kitchen/:id" do
     order = Order.find(params[:id])
