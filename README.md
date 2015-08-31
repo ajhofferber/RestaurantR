@@ -7,9 +7,13 @@ A restaurant-management tool, designed for PC and mobile, that allows waitstaff,
 
 
 ##Screenshots
-![homepage](./images/IMG_1049.PNG)
-![homepage](./images/IMG_1050.PNG)
-
+![homepage](/images/Screen Shot 2015-08-30 at 8.48.40 PM.png?raw=true)
+![homepage](/images/Screen Shot 2015-08-30 at 8.49.03 PM.png?raw=true)
+![homepage](/images/Screen Shot 2015-08-30 at 8.49.13 PM.png?raw=true)
+![homepage](/images/Screen Shot 2015-08-30 at 8.49.41 PM.png?raw=true)
+![homepage](/images/IMG_1049.PNG?raw=true)
+![homepage](/images/IMG_1050.PNG?raw=true)
+![homepage](/images/IMG_1051.PNG?raw=true)
 
 
 ##Languages & Frameworks
