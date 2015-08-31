@@ -22,14 +22,10 @@ class OrdersController < ApplicationController
   end
 
   post '/' do
-    @order = Order.new(params[:order])
+     order = Order.create(params[:order])
+     redirect "/parties/#{order.party_id}"
+   end
 
-    if @order.save
-      redirect "/parties/#{order.party_id}"
-    else
-      raise "Order was invalid due to: #{order.errors.full_messages.join(', ')}"
-    end
-  end
 
   post "/kitchen/:id" do
     order = Order.find(params[:id])
