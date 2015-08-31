@@ -1,25 +1,29 @@
-WaiterAid
+#WaiterAid
 
 
 A restaurant-management tool, designed for PC and mobile, that allows waitstaff, kitchen staff, and administrative staff to manage responsibilities digitally.
 
 
-Screenshots
-![homepage](/images/IMG_1049.PNG)
-![homepage](/images/IMG_1050.PNG)
 
-Languages & Frameworks
 
-Ruby, Ruby on Rails, Sinatra, JavaScript, jQuery (UI, Mobile), HTML, CSS, Bootstrap.
+##Screenshots
+![homepage](./images/IMG_1049.PNG)
+![homepage](./images/IMG_1050.PNG)
 
-Functionality
 
-View all tables, parties, and orders on the landing page.
-Place orders by selecting them from the menu, remove them by swiping them left or right.
-Change a party's waiter, table, or size from the landing page.
-View receipts individually (including suggested tip amounts) and clear the table of a party after they have paid.
-As a waiter, view all of your current tables, as well as any open tables for new parties.
-Add new items to the menu, edit any preexisting items, or remove anything from the menu.
-As a chef, view all current orders, check off any completed orders, and sort priorities.
-Orders in the kitchen turn yellow when 15 minutes have elapsed since their creation, and red after 30 minutes.
-The administration control panel includes the ability to hire or fire waiters (waiters who are fired while still responsible for tables will finish clearing their tables before being removed fully), add or remove tables, and view order statistics.
+
+##Languages & Frameworks
+
+Ruby, Sinatra, JavaScript, jQuery (UI, Mobile), HTML, CSS, Skeleton.
+
+##Functionality
+
+Users are able to:
+- Add, remove, and update parties
+- Open a new ticket by selecting an open table, inputing party size and assigning a server to that table.
+- Take orders from each individual table's tickets and send them off to the kitchen.
+- See a list of the waitstaff, where one can add, edit or delete servers.
+- See a food menu and a drink menu
+- Chefs in the kitchen and bartenders in the bar are able to see specifically the items they must prepare. When an order has been inputted for over 15 minutes, it changes to orange, if it has been inputted for more than 20, it changes to red.
+- Servers are able to print and present itemized receipts, with a total at the bottom, as well as tip suggestions.
+- Run the app seamlessly, whether using a PC or a mobile device.
