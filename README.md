@@ -13,7 +13,7 @@ A restaurant-management tool, designed for PC and mobile, that allows waitstaff,
 </div>
 
 <img src="images/Screen Shot 2015-08-30 at 8.48.40 PM.png" width="250px">
-
+<img src="public/images/Screen Shot 2015-08-30 at 8.48.40 PM.png">
 
 ![homepage](./images/Screen Shot 2015-08-30 at 8.49.03 PM.png)
 ![homepage](/images/Screen Shot 2015-08-30 at 8.49.13 PM.png?raw=true)
