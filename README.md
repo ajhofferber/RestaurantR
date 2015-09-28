@@ -18,7 +18,7 @@ https://waiteraid.herokuapp.com
 
 <img src="public/images/Screen Shot 2015-08-30 at 8.49.41 PM.png" width="400px">
 
-<img src="public/images/phone.gif" height="400px">
+<img src="public/images/phone1.gif" height="400px">
 
 
 
