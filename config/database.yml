@@ -1,3 +1,7 @@
 development:
   adapter: postgresql
   database: albatross
+
+production:
+  adapter: postgresql
+  database: albatross_production
