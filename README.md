@@ -3,7 +3,7 @@
 
 A restaurant-management tool, designed for PC and mobile, that allows waitstaff, kitchen staff, and administrative staff to manage responsibilities digitally.
 
-www.waiteraid.herokuapp.com
+https://waiteraid.herokuapp.com
 
 
 
