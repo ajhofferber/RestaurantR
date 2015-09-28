@@ -24,6 +24,7 @@ A restaurant-management tool, designed for PC and mobile, that allows waitstaff,
 <img src="public/images/IMG_1051.PNG" height="400px">
 
 
+
 ##Languages & Frameworks
 
 Ruby, Sinatra, JavaScript, jQuery (UI, Mobile), HTML, CSS, Skeleton.
